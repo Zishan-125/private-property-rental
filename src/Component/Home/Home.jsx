@@ -61,7 +61,8 @@ function Home() {
         addImage3,
         setaddImage3,
         price,
-        setprice
+        setprice,
+        
     } = useContext(dataContext); // context থেকে ডেটা নিচ্ছি
 
     return (

@@ -25,6 +25,7 @@ function UserContextProvider({ children }) {
         setaddImage3,
         price,
         setprice,
+       
     };
 
     return (
