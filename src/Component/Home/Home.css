@@ -1,11 +1,48 @@
-#home{
+/* Container for Home page */
+#home {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    border-color: white;
-    margin-top: 180px;
+    padding: 2rem;
+    margin-top: 120px; /* slightly reduced top margin */
+    box-sizing: border-box;
+    background-color: #f8f8f8; /* light background for a modern look */
+}
+
+/* Page Title */
+.home-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #222;
+}
+
+/* Subtitle under title */
+.home-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* Grid for property cards */
+.properties-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Optional: card hover effect if Card component supports it */
+.properties-grid .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.properties-grid .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
 }

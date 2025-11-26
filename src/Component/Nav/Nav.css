@@ -1,233 +1,211 @@
-#Nav{
-    width: 100%;
-    height: 160px;
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+/* Main Navbar Container */
+#Nav {
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #ececec;
+  background: #ffffff;
+  position: sticky;
 }
-.nav1{
-    width: 100%;
-    height: 50%;
-    background-color: white;
-    border-bottom: 0.5px solid rgba(117,111,111,0.479);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
+
+/* Top Navbar */
+.nav1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
 }
-.nav2{
-    width: 100%;
-    height: 50%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
-.svg11{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
+
+.logo h1 {
+  font-size: 22px;
+  font-weight: 600;
 }
-.svg11 svg{
-    width: 25px;
-    height: 25px;
-    color:black;
+
+/* Search Bar */
+.search {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 50px;
+  padding: 5px 10px;
+  transition: 0.3s ease;
 }
-.svg11 h3{
-    font-size: 12px;
-    color:rgb(56,56,56);
-    font-weight: 300;
+
+.search input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
 }
-.logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo h1{
-   font-size: 18px; 
-   font-weight: 300;
-   color: rgb(247, 8, 8);
-}
-.search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
-}
-.search input{
-    width: 250px;
-    padding: 10px;
-    box-sizing: border-box;
-    border-radius: 30px;
-    padding-left: 20px;
-    border: 1px solid rgba(125,122,122,0.416);
-    font-size: 15px;
-    color: black;
-    outline: none;
-}
+
 .search button {
-    padding: 10px;
-    background-color: rgb(247, 8, 8);
-    color: white;
-    font-size: 16px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    border: none;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-.search button:hover{
-    border: 2px solid red;
-    background: transparent;
-    color:red
-}
-.search svg{
-    width: 20px;
-    height: 20px;
-    color:white;
-
-}
-.search button:hover svg{
-    color: red;
-}
-.ham{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:20px;
-}
-#btn1{
-    border: none;
-    outline: none;
-    background-color: white;
-    font-size: 16px;
-    font-weight: 300;
-    cursor: pointer;
-    border-radius: 30px;
-    padding: 10px 20px 10px 20px;
-    box-sizing: border-box;
-        transition: all 0.1s;
-}
-#btn1:hover{
-    background-color: rgba(232, 230, 230, 0.844);
-}
-#btn2{
-     border: 1px solid rgba(232, 230, 230, 0.844);
-    outline: none;
-    background-color: white;
-   color: black;
-    cursor: pointer;
-    border-radius: 30px;
-    padding: 10px 20px 10px 20px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.1s;
-}
-#svg1{
-    width: 18px;
-    height: 18px;
-    fill:rgba(92, 89, 89, 0.651);
-}
-#svg2{
-   width: 25px;
-   height: 25px; 
-   fill:rgba(92, 89, 89, 0.651);
-}
-#btn2:hover{
-    box-shadow: 2px 2px 10px black;
-}
-.hamburger{
-    position: absolute;
-    width: 220px;
-    height: 230px;
-    background-color: white;
-    right: 3%;
-    top:45%;
-    box-shadow: 2px 2px 10px rgb(80, 78, 78);
-    border-radius: 30px;
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    box-sizing: border-box;
-}
-.ham1{
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-weight: 300;
-    color: black;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 30px;
-}
-.ham1:hover{
-    background-color: rgba(232, 230, 230, 0.844);
+  background: #ff385c;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
 }
 
-a.active{
-    border-bottom: 2px solid rgb(95, 94, 94);
-    margin-bottom: 5px;
-}
-@media (max-width:900px){
-    #btn1{
-        display: none;
-    }
+/* Right Menu Buttons */
+.ham {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-@media (max-width:800px){
-    .logo h1{
-        display: none;
-    }
-    .nav1{
-        overflow: hidden;
-        padding: 10px;
-    }
-    .nav2{
-        overflow-y: hidden;
-        overflow-x: scroll;
-        justify-content: start;
-        padding: 10px;
-    }
-    .svg11{
-        flex-shrink: 0;
-        scrollbar-width: none;
-    }
-    .search input{
-        width: 180px;
-        font-size: 15px;
-    }
-    .search button span{
-        display: none;
-    }
-    .search{
-        gap: 20px;
-    }
+#btn1 {
+  background: transparent;
+  border: 1px solid #dedede;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-@media (max-width:500px){
-    #btn2{
-      border: none;
-      padding:0;
-    }
-    #svg2{
-        display: none;
-    }
-    #svg1{
-        width: 25px;
-        height: 25px;
-        fill: black;
-    }
+
+#btn1:hover {
+  background: #f7f7f7;
+}
+
+#btn2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #ececec;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #ffffff;
+  transition: 0.3s ease;
+}
+
+#btn2:hover {
+  box-shadow: 0px 0px 6px rgb(200, 200, 200);
+}
+
+/* Hamburger Dropdown */
+.hamburger {
+  width: 180px;
+  background: white;
+  position: absolute;
+  right: 50px;
+  top: 80px;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.hamburger .ham1 {
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.hamburger .ham1:hover {
+  background: #f8f8f8;
+}
+
+/* Category Navbar */
+.nav2 {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 10px 20px;
+  border-top: 1px solid #f1f1f1;
+  overflow-x: auto;
+}
+
+.nav2 .svg11 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #555;
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.25s ease;
+}
+
+.nav2 .svg11 h3 {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.nav2 .svg11:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Active Link */
+a.active .svg11 {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav1 {
+    padding: 12px 20px;
+  }
+
+  .search {
+    display: none;  /* Airbnb style hides search on mobile */
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .nav2 {
+    gap: 20px;
+  }
+}
+
+
+/* Suggestions Dropdown */
+.suggestions {
+  position: absolute;
+  top: 50px;
+  background: #fff;
+  width: 300px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.suggestion-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.suggestion-item:hover {
+  background-color: #f2f2f2;
 }

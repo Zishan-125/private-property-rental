@@ -45,57 +45,55 @@ import ski2 from "../../assets/ski2.avif"
 
 // Context থেকে ডেটা নেওয়ার জন্য dataContext ইম্পোর্ট করেছি
 import { dataContext } from "../../Context/Usercontext.jsx"; // কনটেক্সট অবজেক্ট ইম্পোর্ট
+import { properties } from "../data/data.js";
+
 
 function Home() {
+  const {
+    title,
+    addListing,
+    addImage1,
+    addImage2,
+    addImage3,
+    price
+  } = useContext(dataContext);
 
-    // useContext দিয়ে কনটেক্সট থেকে সব স্টেট ও সেটার ফাংশন গুলো বের করে নিচ্ছি
-    let {
-        title,
-        setTitle,
-        addListing,
-        setaddListing,
-        addImage1,
-        setaddImage1,
-        addImage2,
-        setaddImage2,
-        addImage3,
-        setaddImage3,
-        price,
-        setprice,
-        
-    } = useContext(dataContext); // context থেকে ডেটা নিচ্ছি
+  // Combine pre-defined properties with user-added listing
+  const allProperties = [
+    ...properties,
+    addListing ? {
+      id: "user-added",
+      title: title || "New Listing",
+      price: price || "N/A",
+      image1: addImage1 ? URL.createObjectURL(addImage1) : null,
+      image2: addImage2 ? URL.createObjectURL(addImage2) : null,
+      image3: addImage3 ? URL.createObjectURL(addImage3) : null,
+      location: "",
+      description: ""
+    } : null
+  ].filter(Boolean); // remove null if no user-added listing
 
-    return (
-        <div id='home'>
-            {/* নিচে সব রেডি করা হাউজের কার্ড দেখানো হচ্ছে */}
-            <Card image1={house} image2={house1} image3={house2} title={"3BHK VILLA in FENI"} price={"40,000"} />
-            <Card image1={farmhouse} image2={farmhouse1} image3={farmhouse2} title={"1BHK Farm House in Dhaka"} price={"60,000"} />
-            <Card image1={flat} image2={flat1} image3={flat2} title={"1BHK Flat in Chattogram"} price={"40,000"} />
-            <Card image1={villa} image2={villa1} image3={villa2} title={"2BHK Villa in Dhaka"} price={"65,000"} />
-            <Card image1={mountain} image2={mountain1} image3={mountain2} title={"3BHK VILLA in FENI"} price={"33,000"} />
-            <Card image1={huthouse} image2={huthouse1} image3={huthouse2} title={"1BHK Farm House in Dhaka"} price={"57,000"} />
-            <Card image1={village} image2={village1} image3={village2} title={"3BHK VILLA in Cumilla"} price={"30,000"} />
-            <Card image1={room} image2={room1} image3={room2} title={"1BHK Farm House in Rajshahi"} price={"60,000"} />
-            <Card image1={old} image2={old1} image3={old2} title={"3BHK VILLA in Noakhali"} price={"50,000"} />
-            <Card image1={roomnew} image2={roomnew1} image3={roomnew2} title={"1BHK Farm House in Khulna"} price={"60,000"} />
-            <Card image1={hut1} image2={hut2} image3={hut3} title={"3BHK VILLA in FENI"} price={"35,000"} />
-            <Card image1={ski} image2={ski1} image3={ski2} title={"1BHK Farm House in Barishal"} price={"15,000"} />
+  return (
+    <div id="home">
+      <h2 className="home-title">Discover Your Next Stay</h2>
+      <p className="home-subtitle">Find unique places to stay from cozy rooms to luxurious villas.</p>
 
-            {/* যদি ইউজার নতুন লিস্টিং করে, তাহলে সেই নতুন হাউজটা নিচে দেখানো হবে */}
-            {
-                addListing ? (
-                    <Card
-                        image1={addImage1 ? URL.createObjectURL(addImage1) : null}
-                        image2={addImage2 ? URL.createObjectURL(addImage2) : null}
-                        image3={addImage3 ? URL.createObjectURL(addImage3) : null}
-                        title={title}
-                        price={price || "N/A"} // যদি প্রাইস না দেওয়া থাকে তাহলে "N/A" দেখাবে
-                    />
-                ) : ""
-            }
-        </div>
-    )
+      <div className="properties-grid">
+        {allProperties.map((prop) => (
+          <Card
+            key={prop.id}
+            image1={prop.image1}
+            image2={prop.image2}
+            image3={prop.image3}
+            title={prop.title}
+            price={typeof prop.price === "number" ? `৳${prop.price.toLocaleString()}` : prop.price}
+            location={prop.location}
+            description={prop.description}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-// কম্পোনেন্ট এক্সপোর্ট করা হয়েছে
-export default Home
+export default Home;
